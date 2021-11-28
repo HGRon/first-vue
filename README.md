@@ -1,12 +1,34 @@
 # First-vue
 
-## Images
+### by
+
+> Higor Lins
+> 190218
+
+## New Images
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914609887131074591/unknown.png?width=986&height=478)
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914610000373112832/unknown.png?width=848&height=484)
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914610070543810590/unknown.png?width=849&height=484)
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914610164701736990/unknown.png?width=858&height=484)
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914610199376060436/unknown.png?width=861&height=484)
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914610309753352212/unknown.png?width=415&height=484)
+
+![alt text](https://media.discordapp.net/attachments/460908753945100302/914610385364058152/unknown.png?width=413&height=484)
+
+## Old Images
 
 ![alt text](https://cdn.discordapp.com/attachments/460908753945100302/911832624522203166/unknown.png)
 
 ![alt text](https://cdn.discordapp.com/attachments/460908753945100302/911832732307431454/unknown.png)
 
 ![alt text](https://cdn.discordapp.com/attachments/460908753945100302/911833036696485998/unknown.png)
+
 
 ## Project setup
 ```
