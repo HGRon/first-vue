@@ -1,7 +1,7 @@
 <template>
   <div class="products">
     <div class="products-content">
-      <div v-for="product in GetProducts" :key="product.id" class="card">
+      <div v-for="product in getProducts" :key="product.id" class="card">
         <Card :name="product.name"
               :img="product.img"
               :price="product.price"
@@ -22,8 +22,8 @@ export default {
     Card,
   },
   computed: {
-    GetProducts() {
-      return this.$store.state.products;
+    getProducts() {
+      return this.$store.getters.getProducts;
     }
   }
 }
