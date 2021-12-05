@@ -1,8 +1,14 @@
 <template>
   <div class="users">
     <div class="users-content">
-      <div class="container" v-for="user in GetUsers" :key="user.id">
-        <UserCard :name="user.name"></UserCard>
+      <div class="container" v-for="user in users" :key="user.id.name">
+        <UserCard :name="user.name.first + ' ' + user.name.last "
+                  :image="user.picture.large"
+                  :likes="user.registered.age"
+                  :key="user.id.name"
+                  :email="user.email"
+                  :phone="user.phone"
+        ></UserCard>
       </div>
     </div>
   </div>
@@ -14,9 +20,12 @@ export default {
   name: 'Users',
   components: { UserCard },
   computed: {
-    GetUsers() {
+    users() {
       return this.$store.state.users;
     }
+  },
+  async created() {
+    await this.$store.dispatch("fetchUsers");
   },
 }
 </script>
