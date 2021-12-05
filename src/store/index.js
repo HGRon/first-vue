@@ -1,21 +1,13 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import axios from 'axios'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
 
   state: {
-    users: [
-      { id: 0, name: 'João Pedro'},
-      { id: 1, name: 'Maria Silva'},
-      { id: 2, name: 'Lucas Santos'},
-      { id: 3, name: 'Matheus Pereira'},
-      { id: 4, name: 'Italo Carvalho'},
-      { id: 5, name: 'Leonardo Jośe'},
-      { id: 6, name: 'Gustavo Lima'},
-      { id: 7, name: 'Henrique Agostinho'},
-    ],
+    users: [],
     products: [
       { id: 0, name: 'Fone Gamer', img: 'https://images2.kabum.com.br/produtos/fotos/81132/81132_index_m.jpg', price: 'R$229,90' },
       { id: 1, name: 'Smart Tv', img: 'https://images5.kabum.com.br/produtos/fotos/158885/smart-tv-lg-43-4k-uhd-43up7500-com-wifi-e-bluetooth-hdr-thinqai-compativel-com-inteligencia-artificial-43up7500psf_1623677620_m.jpg', price: 'R$1229,90' },
@@ -25,5 +17,25 @@ export default new Vuex.Store({
       { id: 6, name: 'Monitor Gamer', img: 'https://images1.kabum.com.br/produtos/fotos/96741/96741_1548270162_index_m.jpg', price: 'R$3400,55' },
       { id: 7, name: 'Pc Gamer', img: 'https://images7.kabum.com.br/produtos/fotos/271867/pc-gamer-concordia-amd-ryzen-5-3400g-rgb-8gb-ddr4-ssd-240gb-rgb-linux-preto-31724_1637670855_m.jpg', price: 'R$2899,99' },
     ],
+  },
+  mutations: {
+    SET_USERS(state, payload) {
+      state.users = payload;
+    }
+  },
+  actions: {
+    fetchUsers({commit}) {
+      axios.get('https://randomuser.me/api/?page=1&results=10&seed=abc')
+        .then(res =>{
+          const payload = res.data.results
+          commit('SET_USERS', payload)
+        })
+        .catch(err => console.warn(err));
+    }
+  },
+  getters: {
+    getProducts(state) {
+      return state.products;
+    },
   }
 })
